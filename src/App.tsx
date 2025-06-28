@@ -1,5 +1,6 @@
 
 import './App.css'
+import MovieSearchContainer from './components/MovieSearchContainer'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <h1 className="text-3xl font-bold underline">
         Hello world!
+        <MovieSearchContainer />
       </h1>
     </>
   )
