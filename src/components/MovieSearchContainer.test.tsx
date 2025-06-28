@@ -5,14 +5,13 @@ import MovieSearchContainer from './MovieSearchContainer';
 import { vi } from 'vitest';
 
 // Mock the actual store methods
-vi.mock('../store/useMoveiStore', async () => {
+vi.mock('../store/useMovieStore', async () => {
   const actual = await vi.importActual('../store/useMovieStore');
   return {
     ...actual,
     useMovieStore: vi.fn(),
   };
 });
-
 
 describe('MovieSearchContainer', () => {
   const mockFetchMovies = vi.fn();
