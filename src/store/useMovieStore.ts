@@ -31,11 +31,12 @@ export const useMovieStore = create<MovieStore>((set, get) => ({
 
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${encodeURIComponent(query)}&language=en-US`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`
       );
       const data = await res.json();
       if (data.results) {
         set({ movies: data.results, loading: false });
+        console.log(data.results)
       } else {
         throw new Error('unexpected response');
       }
