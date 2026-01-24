@@ -31,3 +31,10 @@ export const Default: Story = {
     return <MovieList />;
   },
 };
+
+export const NoResults: Story = {
+  render: () => {
+    useMovieStore.setState({ movies: [], hasSearched: true, loading: false });
+    return <MovieList />;
+  },
+};

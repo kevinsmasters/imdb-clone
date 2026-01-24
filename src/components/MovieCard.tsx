@@ -12,7 +12,7 @@ type Props = {
 export default function MovieCard({ movie }: Props) {
   const posterUrl = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-    : 'https://via.placeholder.com/500x750?text=No+Image';
+    : 'https://placehold.co/500x750?text=No+Image';
 
   return(
     <div className="bg-white shadow rounded overflow-hidden">
