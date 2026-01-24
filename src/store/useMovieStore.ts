@@ -12,6 +12,7 @@ type MovieStore = {
   movies: Movie[];
   loading: boolean;
   error: string | null;
+  hasSearched: boolean;
   setQuery: (query: string) => void;
   fetchMovies: () => Promise<void>;
 };
@@ -23,11 +24,12 @@ export const useMovieStore = create<MovieStore>((set, get) => ({
   movies: [],
   loading: false,
   error: null,
+  hasSearched: false,
   setQuery: (query) => set({ query }),
 
   fetchMovies: async () => {
     const { query } = get();
-    set({ loading: true, error: null });
+    set({ loading: true, error: null, hasSearched: true });
 
     try {
       const res = await fetch(

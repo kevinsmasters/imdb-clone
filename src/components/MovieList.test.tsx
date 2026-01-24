@@ -23,3 +23,20 @@ describe('MovieList', () => {
     expect(screen.getByText(/the Matrix/i)).toBeInTheDocument();
   });
 });
+
+it('displays a message if no movies found after search', () => {
+  (useMovieStore as vi.Mock).mockImplementation((selector) =>
+    selector({
+      movies: [],
+      hasSearched: true,
+      loading: false,
+      error: null,
+      query: '',
+      setQuery: vi.fn(),
+      fetchMovies: vi.fn(),
+    })
+  );
+
+  render(<MovieList />);
+  expect(screen.getByText(/no movies found/i)).toBeInTheDocument();
+});
