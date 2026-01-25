@@ -16,11 +16,11 @@ export default function MovieSearchContainer() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search movies..."
-        className="border border-gray-300 p-2 rounded"
+        className="border border-gray-300 p-2 rounded bg-white"
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
+        className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50 cursor-pointer"
         disabled={loading}
       >
         {loading? 'searching...' : 'search'}
